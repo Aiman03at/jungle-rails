@@ -1,0 +1,16 @@
+<!-- app/views/orders/_line_item.html.erb -->
+<tr>
+  <td>
+    <%= image_tag line_item.product.image.url, size: "50x50" %>
+  </td>
+  <td>
+    <h4><%= line_item.product.name %></h4>
+    <p><%= line_item.product.description %></p>
+  </td>
+  <td>
+    <%= line_item.quantity %>
+  </td>
+  <td>
+    <%= number_to_currency(line_item.total_price, unit: "$") %> <!-- Assuming line_item has a method for total_price -->
+  </td>
+</tr>
