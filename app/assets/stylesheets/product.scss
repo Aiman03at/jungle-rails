@@ -88,4 +88,15 @@
       text-align: center;
     }
   }
+
+  .sold-out-badge {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute; /* Adjust as needed based on layout */
+    top: 10px; /* Adjust positioning */
+    left: 10px; /* Adjust positioning */
+    z-index: 10; /* Ensure it's above other elements */
+  }
 }
