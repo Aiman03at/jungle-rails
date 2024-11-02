@@ -46,6 +46,7 @@
           <%# </ul>
         </li> %>
       </ul>
+      
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a
@@ -70,6 +71,14 @@
           My Cart (<%= cart.size %>) <% end %>
         </li>
       </ul>
+
+      <% if logged_in? %>
+  <%= link_to 'Logout', logout_path, method: :delete %>
+<% else %>
+  <%= link_to 'Login', new_session_path %>
+  <br>
+  <%= link_to 'Sign Up', new_registration_path %>
+<% end %>
     </div>
   </div>
 </nav>
