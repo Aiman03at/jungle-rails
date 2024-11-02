@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'categories/index'
+    get 'categories/new'
+    get 'categories/create'
+  end
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
@@ -15,6 +20,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
+     # Add this block for categories
+  resources :categories, only: [:index, :new, :create]
   end
 
   # Adding this line for the About page
